@@ -1,0 +1,11 @@
+.DS_Store
+desktop.ini
+Thumbs.db
+.DocumentRevisions-V100/
+.fseventsd/
+.Spotlight-V100/
+.svn/
+.TemporaryItems/
+.Trash/
+.Trashes/
+node_modules/
