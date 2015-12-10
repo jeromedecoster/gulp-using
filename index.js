@@ -11,13 +11,20 @@ module.exports = function(options) {
   options.path   = paths.indexOf(options.path) != -1 ? options.path : 'cwd';
   options.color  = colors.indexOf(options.color) != -1 ? options.color : 'magenta';
 
+  function pad0(nr) { return nr < 10 ? '0' + nr : nr; }
+
   return map(function(file, cb) {
 
     var f = file.path.replace(file.cwd, '.');
     if (options.path == 'relative') { f = file.relative; }
     else if (options.path == 'path') { f = file.path; }
 
-    console.log('['+chalk.green('gulp')+']', options.prefix, chalk[options.color](f))
+    var time = new Date();
+    console.log(
+        '['+chalk.gray([time.getHours(), time.getMinutes(), time.getSeconds()].map(pad0).join(':'))+']'
+        , options.prefix
+        , chalk[options.color](f)
+    )
 
     cb(null, file);
   });
