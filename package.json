@@ -1,12 +1,12 @@
 {
   "name": "gulp-using",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Lists all files used",
   "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:jeromedecoster/gulp-using.git"
-  },
+  "repository": "jeromedecoster/gulp-using",
+  "files": [
+    "index.js"
+  ],
   "keywords": [
     "gulpplugin",
     "log",

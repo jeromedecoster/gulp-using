@@ -1,10 +1,8 @@
 # gulp-using
 
-<a href="http://gulpjs.com" target="_blank">Gulp</a> filter. Lists all files used. Helps you to verify what your patterns catch
+Gulp filter. Lists all files used. Helps you to verify what your patterns catch
 
 ## Install
-
-Install with <a href="https://npmjs.org/package/gulp-using" target="_blank">npm</a>
 
 ```
 npm install --save-dev gulp-using
@@ -15,9 +13,9 @@ npm install --save-dev gulp-using
 After some complex `src` patterns, and some added filter plugins, it helps you to list all files catched
 
 ```js
-var using = require('gulp-using');
+const using = require('gulp-using')
 
-var jsfiles = ['./src/js/**/*.js', '!./src/js/vendor/**'];
+var jsfiles = ['./src/js/**/*.js', '!./src/js/vendor/**']
 
 gulp.task('default', function() {
   gulp.watch(jsfiles, function() {
@@ -25,56 +23,56 @@ gulp.task('default', function() {
       // action or filter...
       .pipe(using())
       // ...
-  });
-});
+  })
+})
 ```
 
 Output:
 
 ```
-[gulp] Running 'default'...
-[gulp] Finished 'default' in 14 ms
-[gulp] Using file ./src/js/index.js
-[gulp] Using file ./src/js/multiply.js
-[gulp] Using file ./src/js/square.js
+[12:18:43] Running 'default'...
+[12:18:43] Finished 'default' in 14 ms
+[12:18:43] Using ./src/js/index.js
+[12:18:43] Using ./src/js/multiply.js
+[12:18:43] Using ./src/js/square.js
 ```
 
 ## Options
 
-#### options.path
+#### path
+
+How the file path is displayed
 
 * Type: `String`
 * Default: `cwd`
 * Values: `cwd`, `path`, `relative`
 
-How the file path is displayed
+#### color
 
-#### options.color
+How the file path is colored
 
 * Type: `String`
 * Default: `magenta`
 * Values: `black`, `blue`, `cyan`, `gray`, `green`, `magenta`, `red`, `white`, `yellow`
 
-How the file path is colored
-
-#### options.prefix
-
-* Type: `String`
-* Default: `Using file`
+#### prefix
 
 Message shown before the file path
 
+* Type: `String`
+* Default: `Using`
+
 ```js
 // ...
-.pipe(using({prefix:'Using', path:'relative', color:'blue'}))
+.pipe(using({prefix:'Using file', path:'relative', color:'blue'}))
 ```
 
 Output:
 
 ```
-[gulp] Running 'default'...
-[gulp] Finished 'default' in 14 ms
-[gulp] Using index.js
-[gulp] Using multiply.js
-[gulp] Using square.js
+[12:18:43] Running 'default'...
+[12:18:43] Finished 'default' in 14 ms
+[12:18:43] Using file index.js
+[12:18:43] Using file multiply.js
+[12:18:43] Using file square.js
 ```
