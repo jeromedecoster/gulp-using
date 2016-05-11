@@ -21,7 +21,7 @@ module.exports = function(options) {
     else if (options.path == 'path') { f = file.path }
 
     // Append filesize
-    if (options.filesize) {
+    if (options.filesize && file.contents) {
       f += (' - ' + prettyBytes(file.contents.length));
     }
 
