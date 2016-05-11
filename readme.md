@@ -64,7 +64,7 @@ Message shown before the file path
 
 #### filesize
 
-Message shown before the file path
+Filesize shown after the file path
 
 * Type: `Boolean`
 * Default: false`
