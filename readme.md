@@ -67,12 +67,12 @@ Message shown before the file path
 Filesize shown after the file path
 
 * Type: `Boolean`
-* Default: false`
+* Default: `false`
 
 
 ```js
 // ...
-.pipe(using({prefix:'Using file', path:'relative', color:'blue', filesize: true }))
+.pipe(using({prefix:'Using file', path:'relative', color:'blue', filesize:true}))
 ```
 
 Output:

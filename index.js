@@ -1,7 +1,7 @@
 
-const chalk = require('chalk')
+const bytes = require('pretty-bytes')
 const map   = require('map-stream')
-const prettyBytes = require('pretty-bytes')
+const chalk = require('chalk')
 
 module.exports = function(options) {
   options = options || {}
@@ -20,9 +20,8 @@ module.exports = function(options) {
     if (options.path == 'relative')  { f = file.relative }
     else if (options.path == 'path') { f = file.path }
 
-    // Append filesize
     if (options.filesize && file.contents) {
-      f += (' - ' + prettyBytes(file.contents.length));
+      f += (' - ' + bytes(file.contents.length))
     }
 
     var time = '['+chalk.gray(new Date().toTimeString().slice(0, 8))+']'

@@ -1,6 +1,6 @@
 {
   "name": "gulp-using",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Lists all files used",
   "main": "index.js",
   "repository": "jeromedecoster/gulp-using",
